@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>
+</title>
+
+<link rel="stylesheet" href="js_workbook_styles.css"/>
+</head>
+
+
+<body>
+
+ <article class="getIt">
+ <p><a href="http://geoskogen.github.io/lotuseaters" id="lotus">IOTLE</a></p>
+ <img src="images/shell.jpg"  width="356" height="355" id="lotusIcon" alt="shell"/>
+ </article>
+
+ <article class="getIt2">
+ <p><a href="http://geoskogen.github.io/rubynotes" id="ruby">RUBY</a></p>
+ <img src="images/shell.jpg"  width="356" height="355" id="rubyIcon" alt="shell"/>
+
+ </article>
+
+<script>
+
+window.onload = rolloverInit;
+function rolloverInit(){
+
+  for (var i = 0; i < document.links.length; i++) {
+
+    var linkObj = document.links[i];
+
+    if (linkObj.id) {
+      var imgObj = document.getElementById(linkObj.id + "Icon");
+      if (imgObj) {
+        setUpRollover(linkObj,imgObj);
+      }
+    }
+  }
+}
+function setUpRollover(thisLink, thisImage) {
+  thisLink.imgToChange = thisImage;
+  thisLink.onmouseout = rollOut;
+  thisLink.onmouseover = rollOver;
+
+  thisLink.outImage = new Image();
+  thisLink.outImage.src = thisImage.src;
+
+  thisLink.overImage = new Image();
+  thisLink.overImage.src = "images/" + thisLink.id + ".jpg";
+
+}
+
+function rollOver() {
+  this.imgToChange.src = this.overImage.src;
+}
+
+function rollOut() {
+  this.imgToChange.src = this.outImage.src;
+}
+</script>
+
+</body>
+
+</html>
