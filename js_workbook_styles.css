@@ -271,6 +271,9 @@ span.comments {
   font-size: 12px;
 }
 
+img.bigPic {
+  margin: 0 0 0 200px;
+}
 #bill {
   border: 1px solid  #132639;
   border-radius: 8px 8px 2px 2px;
