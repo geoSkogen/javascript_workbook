@@ -259,6 +259,7 @@ span.doubleIndexCard {
   border: 1px solid  #132639;
   border-radius: 8px 8px 2px 2px;
   margin: 4px 4px 4px 4px;
+  opacity: 0.8;
 }
 
 span.codeLine {
