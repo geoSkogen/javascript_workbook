@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>
+</title>
+
+<link rel="stylesheet" href="js_workbook_styles.css"/>
+
+</head>
+
+<body>
+
+ <article class="wideGetIt" style="text-align:center;">
+  <h3><span class="indexCard" style="border-radius: 8px 8px 2px 2px;">
+     Look Into My Eyes</span></h3>
+  <a href="linkPage.html">
+  <img src="images/ban1.jpg" width="571" height="110" alt="bomasha" id="banner"/>
+  </a>
+ </article>
+
+ <article class="wideGetIt" style="text-align:center; border-radius: 2px 2px  14px 14px;">
+   <h3><span class="codeLine">"Cancel #{@MY_SUBSCRIPTION}"</span></h3>
+   <p id="testMe"></p>
+ </article>
+
+<script>
+
+window.onload = initBannerLink;
+
+var banImages = new Array("images/ban1.jpg","images/ban2.jpg","images/ban3.jpg",
+                          "images/ban4.jpg","images/ban5.jpg","images/ban6.jpg");
+
+var banURL = new Array("http://geoskogen.github.io/varcleaner",
+                       "http://geoskogen.github.io/i-ching",
+                       "http://geoskogen.github.io/lotuseaters","http://geoskogen.github.io/rubynotes",
+                       "http://geoskogen.github.io/elasticacres",
+                       "http://geoskogen.github.io/testarea");
+var thisBan = 0;
+
+function rotate() {
+  thisBan++;
+  if (thisBan == banImages.length) {
+    thisBan = 0;
+  }
+  document.getElementById("banner").src = banImages[thisBan];
+
+  setTimeout("rotate()", 6 * 300);
+}
+
+
+function newLocation() {
+  document.location.href = banURL[thisBan];
+  return false;
+}
+
+
+function initBannerLink() {
+  if (document.getElementById("banner").parentNode.tagName == "A") {
+
+       document.getElementById("banner").parentNode.onclick = newLocation;
+  }
+      rotate()
+}
+
+</script>
+
+</body>
+
+</html>

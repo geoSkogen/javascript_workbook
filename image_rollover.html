@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>
+</title>
+
+
+<link rel="stylesheet" href="js_workbook_styles.css"/>
+
+</head>
+
+<body>
+
+<h3><span class="indexCard">Can I Get a Rollover?</span></h3>
+
+<a href="http://geoskogen.github.io/lotuseaters"><img src="images/wintermute_off.jpg" width="900"
+ height="674" alt="wintermute" id="wintermute"/></a>
+<a href="http://geoskogen.github.io/rubynotes/"><img src="images/butterflies_off.jpg" width="900"
+  height="675" alt="butterflies" id="butterflies"/></a>
+
+
+  <script>
+
+  window.onload = rolloverInit;
+
+  function rolloverInit() {
+
+        for (var i = 0 ; i < document.images.length ; i++){
+          if (document.images[i].parentNode.tagName == "A") {
+            setupRollover(document.images[i]);
+          }
+        }
+  }
+
+  function setupRollover(thisImage){
+      thisImage.outImage = new Image();
+      thisImage.outImage.src = thisImage.src;
+      thisImage.onmouseout = rollOut;
+
+      /*thisImage.clickImage = new Image();
+      thisImage.clickImage.src = "images/" + thisImage.id + "_click.jpg";
+      thisImage.onclick = rollClick;*/
+
+      thisImage.overImage = new Image();
+      thisImage.overImage.src = "images/"+ thisImage.id + "_alt.jpg";
+      thisImage.onmouseover = rollOver;
+
+  }
+
+  function rollOver() {
+    this.src = this.overImage.src;
+  }
+
+  function rollOut() {
+    this.src = this.outImage.src;
+  }
+
+ /*function.rollClick() {
+   this.src = this.clickImage.src;
+ }*/
+  </script>
+
+</body>
+
+</html>

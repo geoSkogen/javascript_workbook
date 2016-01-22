@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>
+</title>
+
+<link rel="stylesheet" href="js_workbook_styles.css"/>
+
+</head>
+
+<body>
+<h3 id="head" style="text-align:center;"></h3>
+ <article class="wideGetIt">
+   <h3><span class="doubleIndexCard">Your Timeportal Here! Call 555.123.1111
+       </span></h3>
+   <img src="images/bill1.jpg" width="570" height="427" alt="billboard"
+        id="bill"/>
+   <h3>
+     <span class="indexCard">
+         <a href="#" id="prevLink">prev</a>
+     </span>
+     <span class="doubleIndexCard">
+         <a href="#" id="play">rand</a>
+     </span>
+     <span class="indexCard2">
+         <a href="#" id="nextLink">next</a>
+     </span>
+   </h3>
+
+ </article>
+
+<script>
+
+window.onload = initLinks;
+
+var myPix = new Array("images/bill1.jpg","images/bill2.jpg","images/bill3.jpg",
+                      "images/bill4.jpg","images/bill5.jpg","images/bill6.jpg",
+                      "images/bill7.jpg");
+
+var thisPic = 0;
+var control = '"#{@_such_control}"';
+var chaos =  '"#{@_such_chaos}"';
+var run;
+var even = document.getElementById("play");
+
+function initLinks() {
+  document.getElementById("head").innerHTML = control;
+
+  document.getElementById("prevLink").onclick = procPrev;
+  document.getElementById("nextLink").onclick = procNext;
+
+  even.addEventListener("click", initPlay);
+}
+
+function procPrev() {
+
+  if (thisPic == 0) {
+    thisPic = myPix.length;
+  }
+  thisPic--;
+  document.getElementById("bill").src = myPix[thisPic];
+  return false;
+}
+
+function procNext() {
+
+  thisPic++;
+  if (thisPic == myPix.length) {
+     thisPic = 0;
+  }
+
+  document.getElementById("bill").src = myPix[thisPic];
+  return false;
+}
+
+
+function initPlay() {
+
+ document.getElementById("head").innerHTML = chaos;
+
+ even.removeEventListener("click", initPlay);
+
+ even.addEventListener("click", function() {clearTimeout(run);});
+ even.addEventListener("click", pause);
+
+ choosePic();
+}
+
+
+function choosePic() {
+
+  document.getElementById("play").innerHTML = "stop";
+  var randNumb = Math.floor(Math.random()*myPix.length);
+  document.getElementById("bill").src = myPix[randNumb];
+  run = setTimeout("pickPic()", 2000);
+}
+
+
+function pickPic() {
+
+  var randNumb = Math.floor(Math.random()*myPix.length);
+  document.getElementById("bill").src = myPix[randNumb];
+  run = setTimeout("choosePic()", 2000);
+}
+
+
+function pause() {
+
+  document.getElementById("head").innerHTML = control;
+  document.getElementById("play").innerHTML = "rand";
+
+  even.removeEventListener("click", function() {clearTimeout(run);});
+  even.removeEventListener("click", pause);
+
+  even.addEventListener("click", initPlay);
+}
+
+</script>
+
+</body>
+
+</html>
