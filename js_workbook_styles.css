@@ -177,7 +177,6 @@ article.wideGetIt {
   opacity: 0.8;
 }
 
-
 article.inverseWideGetIt {
   background-color: grey;
   color: #132639;
@@ -192,7 +191,6 @@ article.inverseWideGetIt {
   float: left;
   opacity: 0.8;
 }
-
 
 dl.dataList {
   padding:0;
@@ -305,7 +303,6 @@ img.bigPic {
   position: absolute;
   top: 3em;
   left: 176px;
-
 
 }
 
