@@ -12,11 +12,8 @@ a:link {
 
 a:hover {
   text-decoration: none;
-  background-color: #3973AC;
   color: #C2C2A3;
-  padding: 8px 0 4px 0;
-  border-radius: 8px 8px 2px 2px;
-  opacity: 0.7;
+
 }
 
 a:active {
@@ -76,6 +73,12 @@ header {
   clear: both;
 }
 
+footer {
+  text-align: center;
+  clear: both;
+}
+
+
 nav {
   background-color: grey;
   font-size: 14px;
@@ -130,6 +133,20 @@ article.getIt2 {
   margin: 15px;
   float:left;
   opacity: 0.8;
+}
+
+article.getItRightSkew{
+  background-color: grey;
+  color: #132639;
+  font-size: 14px;
+  line-height: 150%;
+  max-width: 475px;
+  border: 2px solid #132639;
+  border-radius: 14px 2px 2px 2px;
+  padding: 0 20px 20px 14px;
+  margin: 15px 15px 15px 228px;
+  float:left;
+  opacity: 0.8;
 
 }
 
@@ -172,7 +189,7 @@ article.wideGetIt {
   border: 2px solid #132639;
   border-radius: 14px 14px 2px 2px;
   padding: 14px 20px 20px 14px;
-  margin: 0px 15px 15px 325px;
+  margin: 0px 15px 15px 310px;
   float: left;
   opacity: 0.8;
 }
@@ -187,7 +204,7 @@ article.inverseWideGetIt {
   border: 2px solid #132639;
   border-radius: 2px 2px 14px 14px;
   padding: 14px 20px 20px 14px;
-  margin: 0px 15px 15px 325px;
+  margin: 0px 15px 15px 310px;
   float: left;
   opacity: 0.8;
 }
@@ -274,7 +291,16 @@ span.doubleIndexCard {
   border: 1px solid  #132639;
   border-radius: 8px 8px 2px 2px;
   margin: 4px 4px 4px 4px;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+span.inverseDoubleIndexCard {
+  background-color: #3973AC;
+  padding: 8px 8px 4px 12px;
+  border: 1px solid  #132639;
+  border-radius: 2px 2px 8px 8px;
+  margin: 4px 4px 4px 4px;
+  opacity: 0.6;
 }
 
 span.codeLine {
@@ -282,7 +308,7 @@ span.codeLine {
   font-family: courier, sans-serif;
   font-size: 16px;
   font-weight: 900;
-  padding: 2px 4px 2px 4px;
+  padding: 4px 8px 4px 8px;
   border-radius: 2px;
 
 }
@@ -299,10 +325,7 @@ span.comments {
 }
 
 img.bigPic {
-
-  position: absolute;
-  top: 3em;
-  left: 176px;
+  margin: 0 0 12px 170px;
 
 }
 
