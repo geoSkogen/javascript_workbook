@@ -8,7 +8,7 @@
 
 
 <title>
-JS Workbook 
+JS Workbook
 </title>
 
 <link rel="stylesheet" href="js_workbook_styles.css"/>
@@ -16,66 +16,67 @@ JS Workbook
 </head>
 
 <body>
-
- <article class="wideGetIt" style="text-align:center;">
+ <div class="flexOuter">
+ <article class="doubleGetIt" style="text-align:center;">
   <h3><span class="doubleIndexCard">
      Look Into My Eyes</span></h3>
   <a href="linkPage.html">
   <img src="images/ban1.jpg" width="571" height="110" alt="bomasha" id="banner"/>
   </a>
  </article>
-
- <article class="inverseWideGetIt">
+ </div>
+ <div class="flexOuter">
+ <article class="inverseDoubleGetIt">
    <h3><span class="codeLine">Each banner is a different link; check it out, yo.
        </span></h3>
    <p id="testMe"></p>
  </article>
-
+ </div>
  <footer>
   <span class="inverseDoubleIndexCard"><a href="./index.html">home</a></span>
  </footer>
+ <script>
+ window.onload = initBannerLink;
 
-<script>
+ var banImages = new Array("images/ban1.jpg","images/ban2.jpg","images/ban3.jpg",
+                           "images/ban4.jpg","images/ban5.jpg","images/ban6.jpg");
 
-window.onload = initBannerLink;
+ var banURL = new Array("http://geoskogen.github.io/varcleaner",
+                        "http://geoskogen.github.io/i-ching",
+                        "http://geoskogen.github.io/lotuseaters",
+                        "http://geoskogen.github.io/rubynotes",
+                        "http://geoskogen.github.io/elasticacres",
+                        "http://geoskogen.github.io/testarea");
+ var thisBan = 0;
 
-var banImages = new Array("images/ban1.jpg","images/ban2.jpg","images/ban3.jpg",
-                          "images/ban4.jpg","images/ban5.jpg","images/ban6.jpg");
+ function rotate() {
+   thisBan++;
+   if (thisBan == banImages.length) {
+     thisBan = 0;
+   }
+   document.getElementById("banner").src = banImages[thisBan];
 
-var banURL = new Array("http://geoskogen.github.io/varcleaner",
-                       "http://geoskogen.github.io/i-ching",
-                       "http://geoskogen.github.io/lotuseaters","http://geoskogen.github.io/rubynotes",
-                       "http://geoskogen.github.io/elasticacres",
-                       "http://geoskogen.github.io/testarea");
-var thisBan = 0;
-
-function rotate() {
-  thisBan++;
-  if (thisBan == banImages.length) {
-    thisBan = 0;
-  }
-  document.getElementById("banner").src = banImages[thisBan];
-
-  setTimeout("rotate()", 6 * 300);
-}
-
-
-function newLocation() {
-  document.location.href = banURL[thisBan];
-  return false;
-}
+   setTimeout("rotate()", 6 * 300);
+ }
 
 
-function initBannerLink() {
-  if (document.getElementById("banner").parentNode.tagName == "A") {
+ function newLocation() {
+   document.location.href = banURL[thisBan];
+   return false;
+ }
 
-       document.getElementById("banner").parentNode.onclick = newLocation;
-  }
-      rotate()
-}
 
-</script>
+ function initBannerLink() {
+   if (document.getElementById("banner").parentNode.tagName == "A") {
+
+        document.getElementById("banner").parentNode.onclick = newLocation;
+   }
+       rotate()
+ }
+ </script>
 
 </body>
+
+
 
 </html>

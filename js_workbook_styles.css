@@ -29,11 +29,14 @@ a:visited {
 
 button {
   background-color: #C2C2A3;
+  color: black;
   font-family: Arial, sans-serif;
   font-weight: bold;
-  padding: 4px;
-  border-radius: 2px;
-  border: 1px solid #132639;
+  padding: 7px;
+  border-radius: 4px;
+  border: 2px solid #132639;
+  opacity: 0.55;
+  cursor: pointer;
 }
 
 select {
@@ -55,6 +58,18 @@ select option {
   border: 1px solid #132639;
 }
 
+input {
+  background-color: lightgrey;
+  border: 0 none;
+  margin: 0.45em;
+  width: 2.5em;
+  padding: 0.4em 0.75em;
+}
+
+textarea {
+  background-color: lightgray;
+}
+
 img {
   border: 1px solid #132639;
 }
@@ -63,13 +78,12 @@ img {
 h3 {
   opacity: 0.8;
   text-align: center;
+
 }
 
 header {
   background-color: #999966;
   font-size: 16px;
-  padding: 0px;
-  margin: 0px;
   clear: both;
 }
 
@@ -78,47 +92,61 @@ footer {
   clear: both;
 }
 
-
-nav {
-  background-color: grey;
-  font-size: 14px;
-  text-align: center;
-  line-height: 100%;
-  max-width: 475px;
-  border: 2px solid #132639;
-  border-radius: 14px 2px 2px 2px;
-  padding: 12px 8px 12px 20px;
-  margin: 15px 25px 0 15px;
-  opacity: 0.8;
+div.flexOuter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-nav.two {
-  background-color: grey;
-  font-size: 14px;
-  text-align: center;
-  line-height: 100%;
-  max-width: 475px;
-  border: 2px solid #132639;
-  border-radius: 2px 14px 2px 2px;
-  padding: 12px 20px 12px 8px;
-  margin: 15px;
-  opacity: 0.8;
+div.flexOuterVar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
+div.flexOuterImg {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+div.flexItemImg {
+  flex: 1 1 20%;
+}
+
+div.flexTightHeader {
+  display: flex;
+  flex-flow: row  wrap;
+  justify-content: space-around;
+  max-width: 13em;
+  position: absolute;
+  top: 1%;
+  left: 43%;
+}
+
+div.flexTightHeader2 {
+  display: flex;
+  flex-flow: row  wrap;
+  justify-content: space-around;
+  max-width: 18em;
+  position: absolute;
+  top: 1%;
+  left: 43%;
+}
 
 article.getIt {
   background-color: grey;
   color: #132639;
   font-size: 14px;
   line-height: 150%;
-  max-width: 475px;
+  max-width: 25em;
+  text-align: right;
   border: 2px solid #132639;
   border-radius: 14px 2px 2px 2px;
-  padding: 0 14px 20px 36px;
-  margin: 15px;
-  float:left;
+  padding: 1em;
+  margin: 1em;
   opacity: 0.8;
-
+  flex: 1 1 40%;
 }
 
 article.getIt2 {
@@ -126,147 +154,100 @@ article.getIt2 {
   color: #132639;
   font-size: 14px;
   line-height: 150%;
-  max-width: 475px;
+  max-width: 25em;
   border: 2px solid #132639;
   border-radius: 2px 14px 2px 2px;
-  padding: 0 20px 20px 14px;
-  margin: 15px;
-  float:left;
+  padding: 1em;
+  margin: 1em;
   opacity: 0.8;
+  flex: 1 1 40%;
 }
 
-article.getItRightSkew{
+article.doubleGetIt {
   background-color: grey;
   color: #132639;
   font-size: 14px;
   line-height: 150%;
-  max-width: 475px;
-  border: 2px solid #132639;
-  border-radius: 14px 2px 2px 2px;
-  padding: 0 20px 20px 14px;
-  margin: 15px 15px 15px 228px;
-  float:left;
-  opacity: 0.8;
-
-}
-
-
-article.widerGetIt {
-  background-color: grey;
-  color: #132639;
-  font-size: 14px;
-  line-height: 150%;
-  max-width: 525px;
-  border: 2px solid #132639;
-  border-radius: 14px 2px 2px 2px;
-  padding: 0 14px 20px 36px;
-  margin: 15px;
-  float:left;
-  opacity: 0.8;
-}
-
-article.widerGetIt2 {
-  background-color: grey;
-  color: #132639;
-  font-size: 14px;
-  line-height: 150%;
-  max-width: 525px;
-  border: 2px solid #132639;
-  border-radius: 2px 14px 2px 2px;
-  padding: 0 20px 20px 14px;
-  margin: 15px;
-  float:left;
-  opacity: 0.8;
-}
-
-article.wideGetIt {
-  background-color: grey;
-  color: #132639;
-  font-size: 14px;
-  line-height: 150%;
+  max-width: 45em;
   text-align: center;
-  width: 611px;
   border: 2px solid #132639;
   border-radius: 14px 14px 2px 2px;
-  padding: 14px 20px 20px 14px;
-  margin: 0px 15px 15px 310px;
-  float: left;
+  padding: 1em;
+  margin: 1em;
   opacity: 0.8;
+  flex: 1 1 40%;
 }
 
-article.inverseWideGetIt {
-  background-color: grey;
+article.doubleGetItNoMax {
+  background-color:  #999966;
   color: #132639;
   font-size: 14px;
   line-height: 150%;
   text-align: center;
-  width: 611px;
+  border: 2px solid #132639;
+  border-radius: 2px;
+  padding: 1em;
+  margin: 1em;
+  opacity: 0.8;
+  flex: 1 1 40%;
+}
+
+article.inverseDoubleGetIt {
+  background-color: grey;
+  color: #132639;
+  font-size: 14px;
+  line-height: 150%;
+  max-width: 45em;
+  text-align: center;
   border: 2px solid #132639;
   border-radius: 2px 2px 14px 14px;
-  padding: 14px 20px 20px 14px;
-  margin: 0px 15px 15px 310px;
-  float: left;
+  padding: 1em;
+  margin: 1em;
   opacity: 0.8;
+  flex: 1 1 40%;
 }
 
-dl.dataList {
-  padding:0;
-  margin:0;
-  line-height: 200%
-}
-dl.dataList dd {
-  padding: 4px 0 4px 0;
-}
-
-dl.tableOfContents {
-  padding:10px;
-  margin:10px;
-  line-height: 180%
-}
-dl.tableOfContents dt {
-  padding: 8px 0 8px 0;
+article.inverseDoubleGetItNoMax {
+  background-color:  #999966;
+  color: #132639;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  border: 2px solid #132639;
+  border-radius: 2px;
+  padding: 1em;
+  margin: 1em;
+  opacity: 0.8;
+  flex: 1 1 40%;
 }
 
 section.codeBlock {
   background-color: #C2C2A3;
   color: #132639;
-  max-width: 465px;
-  font-family: courier, sans-serif;
+  max-width: 60em;
+  font-family: tahoma, sans-serif;
   font-size: 14px;
   font-weight: 900;
   line-height: 70%;
-  padding: 4px;
-  border-radius: 8px 2px 2px 2px;
-}
-
-section.codeBlock2 {
-    background-color: #C2C2A3;
-    color: #132639;
-    max-width: 465px;
-    font-family: courier, sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-    line-height: 70%;
-    padding: 4px;
-    border-radius: 2px 8px 2px 2px;
+  padding: 1em;
+  border-radius: 2px 2px 2px 2px;
+  margin: 1em 3em;
 }
 
 div.blocked {
-  max-width: 435px;
+  max-width: 25em;
   border: 1px solid grey;
   margin: 0;
-  padding: 0 10px 0 20px;
+  padding: 0 0.5em 0 1em;
 }
 
 div.bordered {
-  max-width: 435px;
+  max-width: 25em;
   border: 1px solid black;
   border-radius: 2px;
   margin: 0;
-  padding: 10px 10px 10px 20px;
+  padding: 0.5em 0.5em 0.5em 1em;
 }
-
-
 
 span.indexCard {
   background-color: #3973AC;
@@ -274,6 +255,7 @@ span.indexCard {
   border: 1px solid  #132639;
   border-radius: 8px 2px 2px 2px;
   margin: 4px 4px 4px 4px;
+  z-index: 1;
 
 }
 
@@ -283,6 +265,7 @@ span.indexCard2 {
   border: 1px solid  #132639;
   border-radius: 2px 8px 2px 2px;
   margin: 4px 4px 4px 4px;
+  z-index: 1;
 }
 
 span.doubleIndexCard {
@@ -300,8 +283,63 @@ span.inverseDoubleIndexCard {
   border: 1px solid  #132639;
   border-radius: 2px 2px 8px 8px;
   margin: 4px 4px 4px 4px;
-  opacity: 0.6;
+  opacity: 0.9;
 }
+
+p.indexCard {
+  background-color: #3973AC;
+  max-width: 3em;
+  padding: 8px 8px 4px 12px;
+  border: 1px solid  #132639;
+  border-radius: 8px 2px 2px 2px;
+  margin: 4px 4px 4px 4px;
+  opacity: 0.9;
+  z-index: 1;
+
+}
+
+p.indexCard2 {
+  background-color: #3973AC;
+  max-width: 5.5em;
+  padding: 8px 8px 4px 8px;
+  border: 1px solid  #132639;
+  border-radius: 2px 8px 2px 2px;
+  margin: 4px 4px 4px 4px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+p.indexCard2a {
+  background-color: #3973AC;
+  max-width: 5.5em;
+  padding: 8px 8px 4px 8px;
+  border: 1px solid  #132639;
+  border-radius: 2px 8px 2px 2px;
+  margin: 4px 4px 4px 34px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+p.doubleIndexCard {
+  background-color: #3973AC;
+  padding: 8px 8px 4px 12px;
+  border: 1px solid  #132639;
+  border-radius: 8px 8px 2px 2px;
+  margin: 4px 4px 4px 4px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+p.inverseDoubleIndexCard {
+  background-color: #3973AC;
+  max-width: 11em;
+  padding: 8px 8px 4px 12px;
+  border: 1px solid  #132639;
+  border-radius: 2px 2px 8px 8px;
+  margin: 4px 4px 4px 4px;
+  opacity: 0.8;
+}
+
 
 span.codeLine {
   background-color: #C2C2A3;
@@ -310,23 +348,13 @@ span.codeLine {
   font-weight: 900;
   padding: 4px 8px 4px 8px;
   border-radius: 2px;
-
 }
 
 span.color {
   color: #C2C2A3;
 }
 
-span.comments {
-  font-family: Arial, sans-serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 12px;
-}
-
 img.bigPic {
-  margin: 0 0 12px 170px;
-
 }
 
 #bill {
@@ -341,6 +369,18 @@ img.bigPic {
 
 
 #spain {
-  border-radius: 0 16px 16px 16px;
   border: 2px solid #132639;
+}
+
+#textField {
+  opacity: 0.75;
+  margin: 0.75em;
+}
+
+#wintermute {
+  margin: 2em 0.25em;
+}
+
+#butterflies {
+  margin: 2em 0.25em;
 }
