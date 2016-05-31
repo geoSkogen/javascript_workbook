@@ -14,29 +14,35 @@ JS Workbook
 <link rel="stylesheet" href="js_workbook_styles.css"/>
 </head>
 
-
 <body>
-  <div class="flexOuterVar">
-  <div class="flexTightHeader2">
-    <p class="indexCard"><a href="./index.html">&nbsp;index</a></p>
-    <p class="indexCard2a">
+
+<div class="flexOuter">
+  <div class="flexTightHeader">
+    <p class="doubleIndexCard">Can I Get a Rollover?</p>
+    <p class="indexCard" id="inverse"><a href="./index.html">index</a></p>
+    <p class="indexCard2" id="inverse2">
       <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
     </p>
-
   </div>
-</div>
- <div class="flexOuter">
- <article class="getIt">
- <p><a href="http://geoskogen.github.io/lotuseaters" id="lotus">IOTLE</a></p>
- <img src="images/shell.jpg"  width="356" height="355" id="lotusIcon" alt="shell"/>
- </article>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div class="flexOuter">
+    <article class="getIt">
+      <p class="linky"><a href="http://geoskogen.github.io/lotuseaters" id="lotus">
+         rollover1</a></p>
+      <img src="images/shell.jpg"  width="356" height="355" id="lotusIcon" alt="shell"/>
+    </article>
 
- <article class="getIt2">
- <p><a href="http://geoskogen.github.io/rubynotes" id="ruby">RUBY</a></p>
- <img src="images/shell.jpg"  width="356" height="355" id="rubyIcon" alt="shell"/>
- </article>
- </div>
- 
+    <article class="getIt2">
+      <p class="linky2"><a href="http://geoskogen.github.io/rubynotes" id="ruby">rollover2</a></p>
+      <img src="images/shell.jpg"  width="356" height="355" id="rubyIcon" alt="shell"/>
+    </article>
+  </div>
+
+</body>
+
 <script>
 
 window.onload = rolloverInit;
@@ -75,7 +81,5 @@ function rollOut() {
   this.imgToChange.src = this.outImage.src;
 }
 </script>
-
-</body>
 
 </html>

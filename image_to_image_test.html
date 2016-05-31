@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>
+JS Workbook
+</title>
+
+<link rel="stylesheet" href="js_workbook_styles.css"/>
+
+</head>
+
+<body>
+
+<!--  <div class="flexOuter"> -->
+<article class="doubleGetItNoMax">
+  <h3>
+    <div class="flexOuterVar">
+    <div class="flexTightHeader3">
+      <p class="indexCard"><a href="./index.html">index</a></p>
+      <p class="indexCard2">
+        <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
+      </p>
+    </div>
+  </div>
+  </h3>
+  <br/>
+   <h1><!--<span class="doubleIndexCard">-->Spain 2010</h1>
+   <div class="flexOuterImg">
+   <div class="flexItemImg">
+   <a href="#" class="textField" id="Madrid">
+   <img src="images/madrid.jpg" width="245" height="183" border="0" alt="madrid"
+   vspace="0" id="MadridImg"/></a>
+   </div>
+   <div class="flexItemImg">
+   <a href="#" class="textField" id="Granada">
+   <img src="images/granada.jpg" width="245" height="183" border="0" alt="granada"
+    vspace="0" id="GranadaImg"/></a>
+   </div>
+   <div class="flexItemImg">
+   <a href="#" class="textField" id="Ronda">
+   <img src="images/ronda.jpg" width="245" height="183" border="0" alt="ronda"
+    vspace="0" id="RondaImg"/></a>
+   </div>
+   <div class="flexItemImg">
+   <a href="#" class="textField" id="Cordoba">
+   <img src="images/cordoba.jpg" width="245" height="183" border="0" alt="cordoba"
+    vspace="0" id="CordobaImg"/></a>
+  </div>
+  </div>
+</article>
+<!-- </div> -->
+ <article class="inverseDoubleGetItNoMax">
+   <div class="flexOuterImg">
+   <div class="flexItemImg">
+   <h3><!--<span class="doubleIndexCard">-->This Is A Test Header</span></h3>
+   <img src="images/spain.jpg" id="Spain" width="490" height="367" alt="spain"
+    vspace="25"/>
+  </div>
+  <div class="flexItemImg">
+    <div class="flexOuter">
+    <p class="doubleIndexCard" id="textField">Spain</p>
+  </div>
+   <!--<img src="images/spain_text.gif" width="136" height="36" id="textField"
+    alt="text field" />-->
+
+   <section class="codeBlock" style="line-height: 180%;">
+    <p>This is some test text.
+       This is some more test text.
+       This is some additional test text.
+       This is the rest of the test text.
+       This is the long-awaited test text sequel.
+       This is the end of the test text.</p>
+       <p>This is some test text.
+          This is some more test text.
+          This is some additional test text.
+          This is the rest of the test text.
+          This is the long-awaited test text sequel.
+          This is the end of the test text.</p>
+          <p>This is some test text.
+             This is some more test text.
+             This is some additional test text.
+             This is the rest of the test text.
+             This is the long-awaited test text sequel.
+             This is the end of the test text.</p>
+   </section>
+ </div>
+ </div>
+</article>
+<footer>
+  <span class="indexCard" id="inverse"><a href="./index.html">index</a></span>
+  <span class="indexCard2" id="inverse2">
+    <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
+  </span>
+</footer>
+
+
+<script>
+window.onload = rolloverInit;
+
+function rolloverInit() {
+  var b = document.body;
+  b.style.backgroundColor = "black";
+  for (var i = 0; i < document.links.length; i++) {
+    var linkObj = document.links[i];
+
+    if (linkObj.className) {
+        var pElm = document.getElementById(linkObj.className);
+
+        if (pElm) {
+
+          setupRollover(linkObj, pElm, i);
+        }/*ends image validation*/
+      }/*ends link validation*/
+  }/*ends loop*/
+}/*ends initialize function*/
+
+function setupRollover(thisLink, p, index) {
+    thisLink.imgToChange = new Image();
+    thisLink.outImage = new Image();
+    thisLink.overImage = new Image();
+
+    thisLink.elmToChange = p;
+    thisLink.outText = new String;
+    thisLink.overText = new String;
+
+    thisLink.onmouseout = rollOut;
+    thisLink.onmouseover = rollOver;
+
+    var rolloverObj = document.getElementById(thisLink.id + "Img");
+       if (rolloverObj) {
+         thisLink.imgToChange = rolloverObj;
+         thisLink.outImage.src = rolloverObj.src;
+         thisLink.overImage.src = "images/" + thisLink.id + "_roll.jpg";
+
+         thisLink.outText = p.childNodes[0].nodeValue;
+         thisLink.overText = thisLink.id;
+
+       }/*ends if cond.*/
+}
+
+function rollOver(){
+  this.imgToChange.src = this.overImage.src;
+  this.elmToChange.innerHTML = this.overText;
+}
+
+function rollOut(){
+  this.imgToChange.src = this.outImage.src;
+  this.elmToChange.innerHTML = this.outText;
+}
+
+
+
+
+</script>
+
+</body>
+
+</html>
