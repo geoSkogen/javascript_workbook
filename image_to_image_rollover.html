@@ -8,7 +8,7 @@
 
 
 <title>
-JS Workbook - Joseph Scoggins
+JS Workbook
 </title>
 
 <link rel="stylesheet" href="js_workbook_styles.css"/>
@@ -16,121 +16,146 @@ JS Workbook - Joseph Scoggins
 </head>
 
 <body>
-  <article class="getIt">
 
+  <article class="doubleGetItNoMax">
+    <h3>
+      <div class="flexOuterVar">
+        <div class="flexTightHeader3">
+          <p class="indexCard"><a href="./index.html">index</a></p>
+          <p class="indexCard2">
+            <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
+          </p>
+        </div>
+      </div>
+    </h3>
+    <br/>
+    <div class="flexOuterImg">
+      <div class="flexItemImg">
+        <a href="#" class="textField" id="Madrid">
+          <img src="images/madrid.jpg" width="245" height="183" border="0"
+            alt="madrid" vspace="0" id="MadridImg"/></a>
+      </div>
+      <div class="flexItemImg">
+        <a href="#" class="textField" id="Granada">
+          <img src="images/granada.jpg" width="245" height="183" border="0"
+            alt="granada"  vspace="0" id="GranadaImg"/></a>
+      </div>
+      <div class="flexItemImg">
+        <a href="#" class="textField" id="Ronda">
+          <img src="images/ronda.jpg" width="245" height="183" border="0"
+            alt="ronda" vspace="0" id="RondaImg"/></a>
+      </div>
+      <div class="flexItemImg">
+        <a href="#" class="textField" id="Cordoba">
+          <img src="images/cordoba.jpg" width="245" height="183" border="0"
+            alt="cordoba" vspace="0" id="CordobaImg"/></a>
+      </div>
+    </div>
+  </article>
 
-  <h3><span class="indexCard">Spain 2010</span></h3>
+  <article class="inverseDoubleGetItNoMax">
+    <div class="flexOuterImg">
+      <div class="flexItemImg">
+        <h2>Spain 2010</h2>
+        <img src="images/spain.jpg" id="Spain" width="490" height="367"
+          alt="spain" vspace="25"/>
+      </div>
+      <div class="flexItemImg">
+        <div class="flexOuter">
+          <p class="doubleIndexCard" id="textField">Spain</p>
+        </div>
 
-  <a href="#" class="textField" id="madrid">
-  <img src="images/madrid.jpg" width="245" height="183" border="0" alt="madrid"
-   vspace="0" id="madridImg"/></a><br clear="right"/>
+        <section class="codeBlock">
+          <p>This is some test text.
+             This is some more test text.
+             This is some additional test text.
+             This is the rest of the test text.
+             This is the long-awaited test text sequel.
+             This is the end of the test text.</p>
+          <p>This is some test text.
+             This is some more test text.
+             This is some additional test text.
+             This is the rest of the test text.
+             This is the long-awaited test text sequel.
+             This is the end of the test text.</p>
+          <p>This is some test text.
+             This is some more test text.
+             This is some additional test text.
+             This is the rest of the test text.
+             This is the long-awaited test text sequel.
+             This is the end of the test text.</p>
+        </section>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <div class="flexOuter">
+    <p class="indexCard" id="inverse"><a href="./index.html">index</a></p>
+    <p class="indexCard2" id="inverse2">
+      <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
+    </p>
+  </div>
+  </footer>
 
-
-
-  <a href="#" class="textField" id="granada">
-  <img src="images/granada.jpg" width="245" height="183" border="0" alt="granada"
-    vspace="0" id="granadaImg"/></a><br>
-
-  <a href="#" class="textField" id="ronda">
-  <img src="images/ronda.jpg" width="245" height="183" border="0" alt="ronda"
-    vspace="0" id="rondaImg"/></a><br clear="right"/>
-
-  <a href="#" class="textField" id="cordoba">
-  <img src="images/cordoba.jpg" width="245" height="183" border="0" alt="cordoba"
-    vspace="0" id="cordobaImg"/></a><br clear="right"/>
-
-</article>
-
-<article class="widerGetIt2">
-  <img src="images/spain.jpg" id="spain" width="490" height="367" alt="spain"
-   vspace="25"/>
-
-   <img src="images/spain_text.gif" width="136" height="36" id="textField"
-    alt="text field" align="right" vspace="20" hspace="190" />
-</article>
-
-<article class="getIt" style="max-width: 245px; ">
-  <h3><span class="indexCard">This Is A Test Header</span></h3>
-  <section class="codeBlock" style="line-height: 180%;">
-    <p>This is some test text.
-       This is some more test text.
-       This is some additional test text.
-       This is the rest of the test text.
-       This is the long-awaited test text sequel.
-       This is the end of the test text.</p>
-  </section>
-</article>
-
-<footer>
- <span class="inverseDoubleIndexCard"><a href="./index.html">home</a></span>
-</footer>
-
+</body>
 
 <script>
 window.onload = rolloverInit;
 
 function rolloverInit() {
+  var b = document.body;
+  b.style.backgroundColor = "black";
   for (var i = 0; i < document.links.length; i++) {
     var linkObj = document.links[i];
 
     if (linkObj.className) {
-        var imgObj = document.getElementById(linkObj.className);
+        var pElm = document.getElementById(linkObj.className);
 
-        if (imgObj) {
+        if (pElm) {
 
-          setupRollover(linkObj, imgObj);
+          setupRollover(linkObj, pElm, i);
         }/*ends image validation*/
       }/*ends link validation*/
   }/*ends loop*/
 }/*ends initialize function*/
 
-function setupRollover(thisLink, textImage) {
-    thisLink.imgToChange = new Array;
-    thisLink.outImage = new Array;
-    thisLink.overImage = new Array;
+function setupRollover(thisLink, p, index) {
+    thisLink.imgToChange = new Image();
+    thisLink.outImage = new Image();
+    thisLink.overImage = new Image();
 
-    thisLink.imgToChange[0] = textImage;
+    thisLink.elmToChange = p;
+    thisLink.outText = new String;
+    thisLink.overText = new String;
+
     thisLink.onmouseout = rollOut;
     thisLink.onmouseover = rollOver;
 
-    thisLink.outImage[0] = new Image();
-    thisLink.outImage[0].src = textImage.src;
-
-    thisLink.overImage[0] = new Image();
-    thisLink.overImage[0].src = "images/" + thisLink.id + "_text.gif";
-
-
     var rolloverObj = document.getElementById(thisLink.id + "Img");
        if (rolloverObj) {
-         thisLink.imgToChange[1] = rolloverObj;
+         thisLink.imgToChange = rolloverObj;
+         thisLink.outImage.src = rolloverObj.src;
+         thisLink.overImage.src = "images/" + thisLink.id + "_roll.jpg";
 
-         thisLink.outImage[1] = new Image();
-         thisLink.outImage[1].src = rolloverObj.src;
-
-         thisLink.overImage[1] = new Image();
-         thisLink.overImage[1].src = "images/" + thisLink.id + "_roll.jpg";
+         thisLink.outText = p.childNodes[0].nodeValue;
+         thisLink.overText = thisLink.id;
 
        }/*ends if cond.*/
-
 }
 
 function rollOver(){
-  for (var i = 0; i < this.imgToChange.length; i++) {
-  this.imgToChange[i].src = this.overImage[i].src;
-  }
+  this.imgToChange.src = this.overImage.src;
+  this.elmToChange.innerHTML = this.overText;
 }
 
 function rollOut(){
-  for (var i = 0; i < this.imgToChange.length; i++) {
-  this.imgToChange[i].src = this.outImage[i].src;
-  }
+  this.imgToChange.src = this.outImage.src;
+  this.elmToChange.innerHTML = this.outText;
 }
 
 
 
 
 </script>
-
-</body>
 
 </html>

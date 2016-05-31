@@ -8,7 +8,7 @@
 
 
 <title>
-JS Workbook - Joseph Scoggins
+JS Workbook
 </title>
 
 <link rel="stylesheet" href="js_workbook_styles.css"/>
@@ -16,30 +16,29 @@ JS Workbook - Joseph Scoggins
 </head>
 
 <body>
-<article class="wideGetIt" id="myArt">
-  <h3><span class="doubleIndexCard">You Will Submit</span></h3>
-
-  <p><textarea id="getMe" rows="8" cols="60"></textarea></p>
-
-  <p><label><input type="radio" id="addRadio" name="formAct"/>add text</label>
-     <label><input type="radio" id="delRadio" name="formAct"/>delete text</label>
-     <label><input type="radio" id="repRadio" name="formAct"/>overwrite text</label>
-  </p>
-
-  <p>paragraph #<input type="number" id="pCount" size="2" maxlength="3"></p>
-
-  <button id="subMe">Submit Changes</button>
-
-  <p id="testMe"></p>
-
-
-<div class="blocked" id="appendage">
-</div>
-</article>
-<footer>
-  <span class="inverseDoubleIndexCard"><a href="./index.html">home</a></span>
-</footer>
-
+  <div class="flexOuter">
+    <article class="doubleGetIt" id="myArt">
+      <h3><span class="doubleIndexCard">You Will Submit</span></h3>
+      <p><textarea id="getMe" rows="8" cols="60"></textarea></p>
+      <p><label><input type="radio" id="addRadio" name="formAct"/>add text</label>
+        <label><input type="radio" id="delRadio" name="formAct"/>delete text</label>
+        <label><input type="radio" id="repRadio" name="formAct"/>overwrite text</label>
+      </p>
+      <p>paragraph #<input type="number" id="pCount" size="2" maxlength="3"></p>
+      <button id="subMe">Submit Changes</button>
+      <p id="testMe"></p>
+      <div class="blocked" id="appendage">
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="flexOuter">
+      <p class="indexCard" id="inverse"><a href="./index.html">index</a></p>
+      <p class="indexCard2" id="inverse2">
+        <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
+      </p>
+    </div>
+  </footer>
 </body>
 <script src="addTextNodeScript.js">
 
