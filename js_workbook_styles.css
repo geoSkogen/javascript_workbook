@@ -5,6 +5,10 @@ body {
   color: #132639;
 }
 
+a {
+  margin: 0;
+}
+
 a:link {
   text-decoration: none;
   color: #132639;
@@ -34,13 +38,14 @@ button {
   font-weight: bold;
   padding: 7px;
   border-radius: 4px;
-  border: 2px solid #132639;
+/*  border: 2px solid #132639;*/
+  border: 2px solid #C2C2A3;
   opacity: 0.55;
   cursor: pointer;
 }
 
 select {
-  padding: 2px;
+  padding: 0.5em;
   border-radius: 2px;
   border: 2px solid #132639;
   background-color: #3973AC;;
@@ -68,6 +73,7 @@ input {
 
 textarea {
   background-color: lightgray;
+  padding: 0.75em;
 }
 
 img {
@@ -77,6 +83,7 @@ img {
 h3 {
   opacity: 0.8;
   text-align: center;
+  margin: 0;
 }
 
 header {
@@ -91,12 +98,6 @@ footer {
 }
 
 div.flexOuter {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
-div.flexOuterVar {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -234,89 +235,69 @@ section.codeBlock {
   margin: 2.25em 3em;
 }
 
-span.indexCard {
+div.indexCard {
   background-color: #3973AC;
   padding: 8px 8px 4px 12px;
   border: 1px solid  #132639;
   border-radius: 8px 2px 2px 2px;
   margin: 4px 4px 4px 4px;
-  z-index: 1;
+  opacity: 0.8;
 
 }
 
-span.indexCard2 {
+div.indexCard2 {
   background-color: #3973AC;
   padding: 8px 12px 4px 8px;
   border: 1px solid  #132639;
   border-radius: 2px 8px 2px 2px;
   margin: 4px 4px 4px 4px;
-  z-index: 1;
-}
-
-span.doubleIndexCard {
-  background-color: #3973AC;
-  padding: 8px 8px 4px 12px;
-  border: 1px solid  #132639;
-  border-radius: 8px 8px 2px 2px;
-  margin: 4px 4px 4px 4px;
-  opacity: 0.9;
-}
-
-span.inverseDoubleIndexCard {
-  background-color: #3973AC;
-  padding: 8px 8px 4px 12px;
-  border: 1px solid  #132639;
-  border-radius: 2px 2px 8px 8px;
-  margin: 4px 4px 4px 4px;
-  opacity: 0.9;
-}
-p.indexCard {
-  z-index: 1;
-}
-p.indexCard a{
-  background-color: #3973AC;
-  max-width: 3em;
-  padding: 8px 8px 4px 12px;
-  margin: 4px;
-  border: 1px solid  #132639;
-  border-radius: 8px 2px 2px 2px;
   opacity: 0.8;
 }
 
-p.indexCard a:hover {
-  background-color: dimgray;
+p.indexCard {
+  z-index: 1;
+}
+p.indexCard {
+  max-width: 3em;
+  padding: 0.5em 0.5em 0.25em 1em;
+  margin: 0.25em;
+  border-radius: 8px 2px 2px 2px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+p.indexCard:hover {
+  background-color: #3973AC;
 }
 
 p.indexCard2 {
   z-index: 1;
 }
 
-p.indexCard2 a{
-  background-color: #3973AC;
+p.indexCard2 {
   max-width: 5.5em;
-  padding: 8px 12px 4px 8px;
-  margin: 4px;
-  border: 1px solid  #132639;
+  padding: 0.5em 0.5em 0.25em 1em;
+  margin: 0.25em;
   border-radius: 2px 8px 2px 2px;
-  opacity: 0.8;
+  opacity: 0.6;
+  font-size: 14px;
 }
 
-p.indexCard2 a:hover {
-  background-color: dimgray;;
-}
-
-p.doubleIndexCard {
+p.indexCard2:hover {
   background-color: #3973AC;
-  max-width: 16em;
+}
+
+div.doubleIndexCard {
+  background-color: #3973AC;
+  max-width: 20em;
   padding: 8px 8px 4px 12px;
   border: 1px solid  #132639;
   border-radius: 8px 8px 2px 2px;
-  margin: 4px 4px 4px 4px;
+  margin: 0 1em;
   opacity: 0.8;
-  z-index: 1;
 }
 
-p.inverseDoubleIndexCard {
+div.inverseDoubleIndexCard {
   background-color: #3973AC;
   max-width: 11em;
   padding: 8px 8px 4px 12px;
@@ -390,7 +371,7 @@ span.color {
 }
 
 img.bigPic {
-  margin: 1em 0;
+  margin: 0 0 1em 0;
 }
 
 #bill {
