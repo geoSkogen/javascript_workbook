@@ -287,6 +287,19 @@ p.indexCard2:hover {
   background-color: #3973AC;
 }
 
+p.doubleIndexCard {
+  max-width: 20em;
+  padding: 8px 8px 4px 12px;
+  border-radius: 8px 8px 2px 2px;
+  margin: 0 1em;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+p.doubleIndexCard:hover {
+  background-color: #3973AC;
+}
+
 div.doubleIndexCard {
   background-color: #3973AC;
   max-width: 20em;
