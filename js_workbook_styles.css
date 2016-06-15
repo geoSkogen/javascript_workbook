@@ -335,7 +335,7 @@ p.linky {
 p.linky a {
   background-color: grey;
   border-radius: 8px 2px 2px 2px;
-  padding: 8px 8px 4px 12px;
+  padding: 0.5em 0.5em 0.25em 0.75em;
 }
 
 p.linky a:hover {
@@ -349,7 +349,7 @@ p.linky2 {
 p.linky2 a {
   background-color: grey;
   border-radius: 2px 2px 8px 2px;
-  padding: 8px 12px 4px 8px;
+  padding: 0.5em  0.75em  0.25em 0.5em;
 }
 
 p.linky2 a:hover {
