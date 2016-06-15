@@ -64,12 +64,7 @@ JS Workbook
         </div>
 
         <section class="codeBlock">
-          <p id="testText">This is some test text.
-             <!--This is some more test text.
-             This is some additional test text.
-             This is the rest of the test text.
-             This is the long-awaited test text sequel.
-             This is the end of the test text.--></p>
+          <p id="testText">This is some test text</p>
         </section>
       </div>
     </div>
@@ -99,13 +94,13 @@ function rolloverInit() {
         var tElm = document.getElementById("testText");
         if (pElm) {
 
-          setupRollover(linkObj, pElm, tElm, i);
+          setupRollover(linkObj, pElm, tElm);
         }/*ends image validation*/
       }/*ends link validation*/
   }/*ends loop*/
 }/*ends initialize function*/
 
-function setupRollover(thisLink, p, t, index) {
+function setupRollover(thisLink, p, t) {
     thisLink.imgToChange = new Image();
     thisLink.outImage = new Image();
     thisLink.overImage = new Image();
@@ -133,15 +128,13 @@ function setupRollover(thisLink, p, t, index) {
          thisLink.outT = t.childNodes[0].nodeValue;
          thisLink.overT = thisLink.id;
 
-
-
        }/*ends if cond.*/
 }
 
 function rollOver(){
   this.imgToChange.src = this.overImage.src;
   this.elmToChange.innerHTML = this.overText;
-  this.textToChange.innerHTML = this.textToChange.childNodes[0].nodeValue.replace("test", this.overT);
+  this.textToChange.innerHTML = this.textToChange.childNodes[0].nodeValue.replace("test",this.overT);
 }
 
 function rollOut(){
