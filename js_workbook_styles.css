@@ -113,36 +113,6 @@ div.flexItemImg {
   flex: 1 1 20%;
 }
 
-div.flexTightHeader {
-  display: flex;
-  flex-flow: row  wrap;
-  justify-content: space-around;
-  max-width: 13em;
-  position: absolute;
-  top: 2%;
-  left: 41%;
-}
-
-div.flexTightHeader2 {
-  display: flex;
-  flex-flow: row  wrap;
-  justify-content: space-around;
-  max-width: 18em;
-  position: absolute;
-  top: 1%;
-  left: 43%;
-}
-
-div.flexTightHeader3 {
-  display: flex;
-  flex-flow: row  wrap;
-  justify-content: space-around;
-  max-width: 18em;
-  position: absolute;
-  top: 1.5%;
-  left: 43%;
-}
-
 article.getIt {
   background-color: grey;
   color: #132639;
@@ -237,20 +207,40 @@ section.codeBlock {
 
 div.indexCard {
   background-color: #3973AC;
-  padding: 8px 8px 4px 12px;
+  padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
   border-radius: 8px 2px 2px 2px;
-  margin: 4px 4px 4px 4px;
+  margin: 0.25em;
   opacity: 0.8;
 
 }
 
 div.indexCard2 {
   background-color: #3973AC;
-  padding: 8px 12px 4px 8px;
+  padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
   border-radius: 2px 8px 2px 2px;
-  margin: 4px 4px 4px 4px;
+  margin: 0.25em;
+  opacity: 0.8;
+}
+
+div.doubleIndexCard {
+  background-color: #3973AC;
+  max-width: 20em;
+  padding: 0.5em 0.5em 0.25em 0.75em;
+  border: 1px solid  #132639;
+  border-radius: 8px 8px 2px 2px;
+  margin: 0 1em;
+  opacity: 0.8;
+}
+
+div.inverseDoubleIndexCard {
+  background-color: #3973AC;
+  max-width: 11em;
+  padding: 0.5em 0.5em 0.25em 0.75em;
+  border: 1px solid  #132639;
+  border-radius: 2px 2px 8px 8px;
+  margin: 0 1em;
   opacity: 0.8;
 }
 
@@ -289,7 +279,7 @@ p.indexCard2:hover {
 
 p.doubleIndexCard {
   max-width: 20em;
-  padding: 8px 8px 4px 12px;
+  padding: 0.5em 0.5em 0.25em 1em;
   border-radius: 8px 8px 2px 2px;
   margin: 0 1em;
   opacity: 0.6;
@@ -311,30 +301,27 @@ div.doubleIndexCard {
 }
 
 div.inverseDoubleIndexCard {
+  padding: 0.5em 0.5em 0.25em 0.75em;
+  border-radius: 8px 8px 2px 2px;
+  margin: 0 1em;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+p.doubleIndexCard:hover {
   background-color: #3973AC;
-  max-width: 11em;
-  padding: 8px 8px 4px 12px;
-  border: 1px solid  #132639;
-  border-radius: 2px 2px 8px 8px;
-  margin: 4px 4px 4px 4px;
-  opacity: 0.8;
 }
 
 #inverse {
   border-radius: 2px 2px 2px 8px;
 }
 
-#inverse2 {
-  border-radius: 2px 2px 8px 2px;
-}
-
-#inverseDouble {
-  border-radius:
-}
-
-
 #inverse a{
   border-radius: 2px 2px 2px 8px;
+}
+
+#inverse2 {
+  border-radius: 2px 2px 8px 2px;
 }
 
 #inverse2 a{
@@ -369,20 +356,6 @@ p.linky2 a:hover {
   background-color: #3973AC;
 }
 
-}
-span.codeLine {
-  background-color: #C2C2A3;
-  font-family: courier, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  padding: 4px 8px 4px 8px;
-  border-radius: 2px;
-}
-
-span.color {
-  color: #C2C2A3;
-}
-
 img.bigPic {
   margin: 0 0 1em 0;
 }
@@ -395,6 +368,7 @@ img.bigPic {
 #banner{
   border: 2px solid  #132639;
   border-radius: 14px 14px 2px 2px;
+  margin: 1em 0 0 0;
 }
 
 
