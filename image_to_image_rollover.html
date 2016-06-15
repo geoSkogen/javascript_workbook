@@ -64,24 +64,12 @@ JS Workbook
         </div>
 
         <section class="codeBlock">
-          <p>This is some test text.
-             This is some more test text.
+          <p id="testText">This is some test text.
+             <!--This is some more test text.
              This is some additional test text.
              This is the rest of the test text.
              This is the long-awaited test text sequel.
-             This is the end of the test text.</p>
-          <p>This is some test text.
-             This is some more test text.
-             This is some additional test text.
-             This is the rest of the test text.
-             This is the long-awaited test text sequel.
-             This is the end of the test text.</p>
-          <p>This is some test text.
-             This is some more test text.
-             This is some additional test text.
-             This is the rest of the test text.
-             This is the long-awaited test text sequel.
-             This is the end of the test text.</p>
+             This is the end of the test text.--></p>
         </section>
       </div>
     </div>
@@ -108,16 +96,16 @@ function rolloverInit() {
 
     if (linkObj.className) {
         var pElm = document.getElementById(linkObj.className);
-
+        var tElm = document.getElementById("testText");
         if (pElm) {
 
-          setupRollover(linkObj, pElm, i);
+          setupRollover(linkObj, pElm, tElm, i);
         }/*ends image validation*/
       }/*ends link validation*/
   }/*ends loop*/
 }/*ends initialize function*/
 
-function setupRollover(thisLink, p, index) {
+function setupRollover(thisLink, p, t, index) {
     thisLink.imgToChange = new Image();
     thisLink.outImage = new Image();
     thisLink.overImage = new Image();
@@ -125,6 +113,10 @@ function setupRollover(thisLink, p, index) {
     thisLink.elmToChange = p;
     thisLink.outText = new String;
     thisLink.overText = new String;
+
+    thisLink.textToChange = t;
+    thisLink.outT = new String;
+    thisLink.overT = new String;
 
     thisLink.onmouseout = rollOut;
     thisLink.onmouseover = rollOver;
@@ -138,17 +130,24 @@ function setupRollover(thisLink, p, index) {
          thisLink.outText = p.childNodes[0].nodeValue;
          thisLink.overText = thisLink.id;
 
+         thisLink.outT = t.childNodes[0].nodeValue;
+         thisLink.overT = thisLink.id;
+
+
+
        }/*ends if cond.*/
 }
 
 function rollOver(){
   this.imgToChange.src = this.overImage.src;
   this.elmToChange.innerHTML = this.overText;
+  this.textToChange.innerHTML = this.textToChange.childNodes[0].nodeValue.replace("test", this.overT);
 }
 
 function rollOut(){
   this.imgToChange.src = this.outImage.src;
   this.elmToChange.innerHTML = this.outText;
+  this.textToChange.innerHTML = this.outT;
 }
 
 
