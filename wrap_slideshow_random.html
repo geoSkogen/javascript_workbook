@@ -16,22 +16,22 @@ JS Workbook
 </head>
 
 <body>
+  <h3 id="test"></h3>
   <h3 id="head"></h3>
   <div class="flexOuter">
     <article class="doubleGetIt">
-      <h3><span class="doubleIndexCard">Your Timeportal Here! Call 555.432.1111
-          </span></h3>
+      <h3><br/></h3>
       <img src="images/bill1.jpg" width="570" height="427" alt="billboard"
           id="bill"/>
         <div class="flexOuter">
-        <div class="indexCard">
-          <a href="#" id="prevLink">prev</a>
+        <div class="indexCard" id="prevLink">
+          <a href="#" >prev</a>
         </div>
-        <div class="doubleIndexCard">
-          <a href="#" id="play">rand</a>
+        <div class="doubleIndexCard" id="play">
+          <a href="#" >rand</a>
         </div>
-        <div class="indexCard2">
-          <a href="#" id="nextLink">next</a>
+        <div class="indexCard2" id="nextLink">
+          <a href="#">next</a>
         </div>
       </div>
     </article>
@@ -63,11 +63,23 @@ var even = document.getElementById("play");
 
 function initLinks() {
   document.getElementById("head").innerHTML = control;
-
   document.getElementById("prevLink").onclick = procPrev;
   document.getElementById("nextLink").onclick = procNext;
 
   even.addEventListener("click", initPlay);
+
+  var ps = document.getElementsByTagName("p");
+  var pos = ps.length - 2;
+  var poslink = document.links.length - 2;
+  for ( var i = 0; i < 2; i++ ) {
+    var hrefbottom = document.links[poslink].href;
+      clickLink(hrefbottom, i, pos);
+    poslink++;
+    pos++;
+  }
+   function clickLink(boturl, top, bot) {
+     ps[bot].onclick = function () { location.assign(boturl); };
+   }
 }
 
 function procPrev() {

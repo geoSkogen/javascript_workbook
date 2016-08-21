@@ -32,16 +32,16 @@ a:visited {
 
 
 button {
-  background-color: #C2C2A3;
-  color: black;
-  font-family: Arial, sans-serif;
+  max-width: 5.5em;
+  padding: 0.5em;
+  margin: 0.25em;
+  border-radius: 2px 2px 2px 2px;
+  opacity: 0.6;
+  font-size: 14px;
   font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-/*  border: 2px solid #132639;*/
-  border: 2px solid #C2C2A3;
-  opacity: 0.55;
   cursor: pointer;
+  background-color: #3973AC;
+  border: none;
 }
 
 select {
@@ -83,7 +83,7 @@ img {
 h3 {
   opacity: 0.8;
   text-align: center;
-  margin: 0;
+  margin: 0.75em 0 0 0;
 }
 
 header {
@@ -121,7 +121,7 @@ article.getIt {
   max-width: 25em;
   text-align: right;
   border: 2px solid #132639;
-  border-radius: 14px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   padding: 1em;
   margin: 1em;
   flex: 1 1 40%;
@@ -134,13 +134,27 @@ article.getIt2 {
   line-height: 150%;
   max-width: 25em;
   border: 2px solid #132639;
-  border-radius: 2px 2px 14px 2px;
+  border-radius: 2px 2px 2px 2px;
   padding: 1em 1.5em 1em 0.5em;
   margin: 1em;
   flex: 1 1 40%;
 }
 
 article.doubleGetIt {
+  background-color: grey;
+  color: #132639;
+  font-size: 14px;
+  line-height: 150%;
+  max-width: 45em;
+  text-align: center;
+  border: 2px solid #132639;
+  border-radius: 2px 2px 2px 2px;
+  padding: 1em;
+  margin: 1em;
+  flex: 1 1 40%;
+}
+
+article.indexGetIt {
   background-color: grey;
   color: #132639;
   font-size: 14px;
@@ -209,19 +223,20 @@ div.indexCard {
   background-color: #3973AC;
   padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
-  border-radius: 8px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   margin: 0.25em;
   opacity: 0.8;
-
+  cursor: pointer;
 }
 
 div.indexCard2 {
   background-color: #3973AC;
   padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
-  border-radius: 2px 8px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   margin: 0.25em;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 div.doubleIndexCard {
@@ -229,9 +244,10 @@ div.doubleIndexCard {
   max-width: 20em;
   padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
-  border-radius: 8px 8px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 div.inverseDoubleIndexCard {
@@ -239,7 +255,7 @@ div.inverseDoubleIndexCard {
   max-width: 11em;
   padding: 0.5em 0.5em 0.25em 0.75em;
   border: 1px solid  #132639;
-  border-radius: 2px 2px 8px 8px;
+  border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
   opacity: 0.8;
 }
@@ -249,11 +265,12 @@ p.indexCard {
 }
 p.indexCard {
   max-width: 3em;
-  padding: 0.5em 0.5em 0.25em 1em;
+  padding: 0.5em;
   margin: 0.25em;
-  border-radius: 8px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   opacity: 0.6;
   font-size: 14px;
+  cursor: pointer;
 }
 
 p.indexCard:hover {
@@ -266,11 +283,12 @@ p.indexCard2 {
 
 p.indexCard2 {
   max-width: 5.5em;
-  padding: 0.5em 0.5em 0.25em 1em;
+  padding: 0.5em;
   margin: 0.25em;
-  border-radius: 2px 8px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   opacity: 0.6;
   font-size: 14px;
+  cursor: pointer;
 }
 
 p.indexCard2:hover {
@@ -279,8 +297,8 @@ p.indexCard2:hover {
 
 p.doubleIndexCard {
   max-width: 20em;
-  padding: 0.5em 0.5em 0.25em 0.75em;
-  border-radius: 8px 8px 2px 2px;
+  padding: 0.5em;
+  border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
   font-size: 14px;
   opacity: 0.6;
@@ -290,30 +308,14 @@ p.doubleIndexCard:hover {
   background-color: #3973AC;
 }
 
-#inverse {
-  border-radius: 2px 2px 2px 8px;
-}
-
-#inverse a{
-  border-radius: 2px 2px 2px 8px;
-}
-
-#inverse2 {
-  border-radius: 2px 2px 8px 2px;
-}
-
-#inverse2 a{
-  border-radius: 2px 2px 8px 2px;
-}
-
 p.linky {
   text-align: center;
 }
 
 p.linky a {
   background-color: grey;
-  border-radius: 8px 2px 2px 2px;
-  padding: 0.5em 0.5em 0.25em 0.75em;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0.5em;
 }
 
 p.linky a:hover {
@@ -326,8 +328,8 @@ p.linky2 {
 
 p.linky2 a {
   background-color: grey;
-  border-radius: 2px 2px 8px 2px;
-  padding: 0.5em  0.75em  0.25em 0.5em;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0.5em;
 }
 
 p.linky2 a:hover {
@@ -340,12 +342,12 @@ img.bigPic {
 
 #bill {
   border: 1px solid  #132639;
-  border-radius: 8px 8px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
 }
 
 #banner{
   border: 2px solid  #132639;
-  border-radius: 14px 14px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   margin: 1em 0 0 0;
 }
 
@@ -365,4 +367,8 @@ img.bigPic {
 
 #butterflies {
   margin: 2em 0.25em;
+}
+
+#home {
+  cursor: pointer;
 }

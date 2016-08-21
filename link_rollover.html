@@ -17,6 +17,7 @@ JS Workbook
 <body>
 
   <div class="flexOuter">
+    <p id="test"></p>
     <p class="indexCard"><a href="./index.html">index</a></p>
       <div class="doubleIndexCard">Can I Get a Rollover?</div>
     <p class="indexCard2">
@@ -41,7 +42,12 @@ JS Workbook
 <script>
 
 window.onload = rolloverInit;
+
 function rolloverInit(){
+
+  var stop = document.links.length - 2;
+  var indexes = document.getElementsByClassName("indexCard");
+  var homes = document.getElementsByClassName("indexCard2");
 
   for (var i = 0; i < document.links.length; i++) {
 
@@ -54,7 +60,7 @@ function rolloverInit(){
       }
     }
   }
-}
+
 function setUpRollover(thisLink, thisImage) {
   thisLink.imgToChange = thisImage;
   thisLink.onmouseout = rollOut;
@@ -75,6 +81,28 @@ function rollOver() {
 function rollOut() {
   this.imgToChange.src = this.outImage.src;
 }
+
+function getHref(elmArr, first, next) {
+  var href;
+  var index;
+  if (first == 1) { next++; }
+  for (var i = 0; i < elmArr.length; i++) {
+    index = (i == 0)? first : next;
+    href = document.links[index].href;
+    clickLink(elmArr[i], href);
+  }
+
+  function clickLink (elm, url) {
+    elm.onclick = function () { location.assign(url); };
+  }
+}
+
+
+getHref(indexes, 0, stop);
+getHref(homes, 1, stop);
+
+}
+
 </script>
 
 </html>

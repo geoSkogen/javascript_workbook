@@ -35,7 +35,7 @@ JS Workbook
  </div>
  <footer>
    <div class="flexOuter">
-     <p class="indexCard" id="inverse"><a href="./index.html">index</a></p>
+     <p class="indexCard" id="inverse"><a href="index.html">index</a></p>
      <p class="indexCard2" id="inverse2">
        <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a>
      </p>
@@ -76,6 +76,31 @@ JS Workbook
 
 
  function initBannerLink() {
+
+   var stop = document.links.length - 2;
+   var indexes = document.getElementsByClassName("indexCard");
+   var homes = document.getElementsByClassName("indexCard2");
+
+   function getHref(elmArr, first, next) {
+     var href;
+     var index;
+     if (first == 1) { next++; }
+     for (var i = 0; i < elmArr.length; i++) {
+       index = (i == 0)? first : next;
+       href = document.links[index+1].href;
+       //re: links[index+1]: modified formula to account for banner link
+       clickLink(elmArr[i], href);
+     }
+
+     function clickLink (elm, url) {
+       elm.onclick = function () { location.assign(url); };
+     }
+   }
+
+
+   getHref(indexes, 0, stop);
+   getHref(homes, 1, stop);
+
    if (document.getElementById("banner").parentNode.tagName == "A") {
 
         document.getElementById("banner").parentNode.onclick = newLocation;

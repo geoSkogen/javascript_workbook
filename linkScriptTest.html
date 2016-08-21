@@ -19,6 +19,7 @@ JS Workbook
 
   <article class="doubleGetItNoMax">
     <h3>
+      <span id="test"></span>
       <div class="flexOuter">
         <p class="indexCard"><a href="./index.html">index</a></p>
         <p class="indexCard2">
@@ -81,12 +82,31 @@ JS Workbook
 </body>
 
 <script>
+/*this script contains two different methods for assigning clickable link hrefs
+  to chosen HTML tag*/
+
 window.onload = rolloverInit;
 
 function rolloverInit() {
-  var stop = document.links.length - 2;
-  var indexes = document.getElementsByClassName("indexCard");
-  var homes = document.getElementsByClassName("indexCard2");
+  /*first method assigns first two links to first two <p>s and last two links
+    to last two <p>s, even if document's total links and <p>s in between are not
+    equal in number.  */
+//  var testMe = document.getElementById("test");
+  var ps = document.getElementsByTagName("p");
+  var pos = ps.length - 2;
+  var poslink = document.links.length - 2;
+  for ( var i = 0; i < 2; i++ ) {
+    var hreftop = document.links[i].href;
+    var hrefbottom = document.links[poslink].href;
+      clickLink(hreftop, hrefbottom, i, pos);
+    poslink++;
+    pos++;
+  }
+   function clickLink(topurl, boturl, top, bot) {
+     ps[top].onclick = function () { location.assign(topurl); };
+     ps[bot].onclick = function () { location.assign(boturl); };
+   }
+  /*end first method*/
 
   var b = document.body;
   //b.style.backgroundColor = "black";
@@ -147,6 +167,12 @@ function rollOut(){
   this.textToChange.innerHTML = this.outT;
 }
 
+/*second method assigns clickable links to classed HTML tags,
+  assuming there are two links;   *//*
+var stop = document.links.length - 2;
+var indexes = document.getElementsByClassName("indexCard");
+var homes = document.getElementsByClassName("indexCard2");
+
 function getHref(elmArr, first, next) {
   var href;
   var index;
@@ -164,7 +190,8 @@ function getHref(elmArr, first, next) {
 
 
 getHref(indexes, 0, stop);
-getHref(homes, 1, stop);
+getHref(homes, 1, stop);*/
+/*ends second method*/
 
 }/*ends initialize function*/
 
