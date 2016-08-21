@@ -8,6 +8,7 @@ var testNode = document.getElementById("testMe");
 function initFuncs(){
     document.getElementById("subMe").onclick = beginProcs;
     theDiv = document.getElementById("appendage");
+    
 }
 
 function beginProcs() {

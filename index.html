@@ -17,7 +17,7 @@ JS Workbook - Joseph Scoggins
 
 <body>
   <div class="flexOuter">
-    <p class="doubleIndexCard">
+    <p class="doubleIndexCard" id="home">
       <a href="http://geoskogen.github.io/joseph_scoggins/">geoSkogen</a></p>
   </div>
 <h3> JavaScript Workbook</h3>
@@ -56,11 +56,18 @@ window.onload = initForm;
 window.onunload = function() {};
 
 function initForm() {
+  var but = document.getElementById("home");
+  var a = document.getElementsByTagName("a")[0];
+  var href = a.getAttribute("href");
+    clickLink(but, href);
 
   document.getElementById("newLocation").selectedIndex = 0;
   document.getElementById("newLocation").onchange = jumpPage;
 }
 
+function clickLink(elm, url) {
+  elm.onclick = function () { location.assign(url); };
+}
 
 function jumpPage() {
   var newLoc = document.getElementById("newLocation");
@@ -68,7 +75,7 @@ function jumpPage() {
 
 
   window.location = newPage;
-  }
+}
 
 </script>
 
