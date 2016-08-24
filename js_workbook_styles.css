@@ -80,6 +80,7 @@ textarea {
 
 img {
   /*border: 1px solid #132639;*/
+  border: none;
 }
 
 h3 {
@@ -224,7 +225,7 @@ section.codeBlock {
 div.indexCard {
   background-color: #3973AC;
   padding: 0.5em 0.5em 0.25em 0.75em;
-
+  border: none;
   border-radius: 2px 2px 2px 2px;
   margin: 0.25em;
   opacity: 0.8;
@@ -234,7 +235,7 @@ div.indexCard {
 div.indexCard2 {
   background-color: #3973AC;
   padding: 0.5em 0.5em 0.25em 0.75em;
-
+  border: none;
   border-radius: 2px 2px 2px 2px;
   margin: 0.25em;
   opacity: 0.8;
@@ -245,7 +246,7 @@ div.doubleIndexCard {
   background-color: #3973AC;
   max-width: 20em;
   padding: 0.5em 0.5em 0.25em 0.75em;
-
+  border: none
   border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
   opacity: 0.8;
@@ -256,7 +257,7 @@ div.inverseDoubleIndexCard {
   background-color: #3973AC;
   max-width: 11em;
   padding: 0.5em 0.5em 0.25em 0.75em;
-
+  border: none;
   border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
   opacity: 0.8;
@@ -299,28 +300,6 @@ p.indexCard2:hover {
 
 p.doubleIndexCard {
   max-width: 20em;
-  padding: 0.5em;
-  border-radius: 2px 2px 2px 2px;
-  margin: 0 1em;
-  opacity: 0.6;
-  font-size:14px;
-}
-
-p.doubleIndexCard:hover {
-  background-color: #3973AC;
-}
-
-div.doubleIndexCard {
-  background-color: #3973AC;
-  max-width: 20em;
-  padding: 0.5em;
-  border: 1px solid  #132639;
-  border-radius: 2px 2px 2px 2px;
-  margin: 0 1em;
-  opacity: 0.8;
-}
-
-div.inverseDoubleIndexCard {
   padding: 0.5em;
   border-radius: 2px 2px 2px 2px;
   margin: 0 1em;
