@@ -1,4 +1,4 @@
-window.onload = initClick;
+window.addEventListener("load", initClick);
 
 function initClick() {
 
