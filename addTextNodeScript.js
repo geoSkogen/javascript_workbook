@@ -31,6 +31,7 @@ function initFuncs() {
   }
 
   function addNode(thisP, allPs) {
+    testNodes[1].innerHTML = "";
     var textarea = document.getElementsByTagName("textarea")[0];
     if (thisP <= 0) {
       testNodes[0].innerHTML = "get real";
@@ -72,11 +73,14 @@ function initFuncs() {
             }
             if (Number(allPs[i].id) < thisP) {
               range++;
-            } else {
+            } else if (Number(allPs[i].id) > thisP) {
               range--;
             }
-            if (Number(allPs[i].id) > thisP && Number(allPs[i-1].id) ) {
-              beforeMe = allPs[i];
+            //debugging line//testNodes[1].innerHTML += "range: " + range + " &#160; i: " + i  + " &#160; line id#: " +  allPs[i].id + "<br/>" ;
+            if (i != 0) {
+              if (Number(allPs[i].id) > thisP && Number(allPs[i-1].id) < thisP ) {
+                beforeMe = allPs[i];
+              }
             }
           }
           if (range == allPs.length) {
